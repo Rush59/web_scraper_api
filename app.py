@@ -4,8 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # This line adds CORS support for all origins. Customize this if needed.
 
 def auth_required(f):
     @wraps(f)
